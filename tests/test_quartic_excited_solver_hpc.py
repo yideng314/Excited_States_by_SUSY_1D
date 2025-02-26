@@ -16,23 +16,20 @@ if __name__ == "__main__":
 
 # Output:
 # 
-# Newton method iteration 1, diff = -1.20e-1.
-# Newton method iteration 2, diff = -3.23e-2.
-# Newton method iteration 3, diff = -2.74e-3.
-# Newton method iteration 4, diff = -2.01e-5.
-# Newton method iteration 5, diff = -1.07e-9.
-# Newton method iteration 6, diff = -3.07e-18.
-# Newton method iteration 7, diff = -2.52e-35.
-# Newton method iteration 8, diff = -1.70e-69.
-# Newton method iteration 9, diff = -7.66e-138.
-# Newton method converges at iteration 9, with energy convergence -7.66e-138.
-# Newton method iteration 1, diff = -3.17e-1.
-# Newton method iteration 2, diff = -7.78e-2.
-# Newton method iteration 3, diff = -5.33e-3.
-# Newton method iteration 4, diff = -2.52e-5.
-# Newton method iteration 5, diff = -5.65e-10.
-# Newton method iteration 6, diff = -2.83e-19.
-# Newton method iteration 7, diff = -7.14e-38.
-# Newton method iteration 8, diff = -4.53e-75.
-# Newton method iteration 9, diff = -1.83e-149.
+# Newton method iteration 1, diff = 1.81e-4.
+# Newton method iteration 2, diff = -3.54e-7.
+# Newton method iteration 3, diff = -1.36e-12.
+# Newton method iteration 4, diff = -1.99e-23.
+# Newton method iteration 5, diff = -4.27e-45.
+# Newton method iteration 6, diff = -1.97e-88.
+# Newton method iteration 7, diff = -4.19e-175.
+# Newton method converges at iteration 7, with energy convergence -4.19e-175.
+# Newton method iteration 1, diff = -1.64e-4.
+# Newton method iteration 2, diff = -3.66e-7.
+# Newton method iteration 3, diff = -1.81e-12.
+# Newton method iteration 4, diff = -4.42e-23.
+# Newton method iteration 5, diff = -2.64e-44.
+# Newton method iteration 6, diff = -9.44e-87.
+# Newton method iteration 7, diff = -1.20e-171.
+# Newton method converges at iteration 7, with energy convergence -1.20e-171.
 # ...

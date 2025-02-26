@@ -108,10 +108,10 @@ def newton_method(f1, f2, f3, f4, f5, E0, truncation_order, precision=50, max_it
     for i in range(max_iter):
         # generate the expansion and its derivative
         expansion, d_expansion = expansion_with_derivative_solver(f1, f2, f3, f4, f5, E, truncation_order, precision)
-        # calculate the residue
-        residue = expansion[-1]
+        # calculate the residue: sum(expansion)+sum(f4).sqrt()==0
+        residue = sum(expansion) + sum(f4).sqrt()
         # calculate the derivative of the residue
-        d_residue = d_expansion[-1]
+        d_residue = sum(d_expansion)
         # convergence check
         diff = -residue/d_residue
         print(f"Newton method iteration {i+1}, diff = {diff:.2e}.")
