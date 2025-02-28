@@ -113,11 +113,16 @@ def quartic_excited_solver(c, E0s, truncation_order, precision, tol, max_iter=10
     tol = Decimal(str(tol))
     Es = []
     expansions = []
+    f4_list = []
     for i in range(n_excited):
         # update f4 to get the new excited state solution
+        f4_list.append(f4)
         E, expansion, f4 = excited_once_solver(f1, f2, f3, f4, f5, E0s[i], c, truncation_order, precision, max_iter, tol)
         Es.append(E)
         expansions.append(expansion)
+    # save f4 list to a JSON file
+    filename = f"results/f4_c_{c}_trunc_{truncation_order}_prec_{precision}_tol_{tol}.json"
+    save_f4(filename, f4_list)
     return Es, expansions
 
 # save and load results
@@ -139,7 +144,41 @@ def save_results(filename, Es, expansions):
     }
     with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
-        
+
+# save f4 in f4_list (length=n_excited) to a JSON file
+def save_f4(filename, f4_list):
+    """
+    Function to save the f4 lists to a JSON file.
+    
+    Parameters:
+    filename (str): The name of the file to save the f4 lists.
+    f4_list (list): The list of f4 arrays.
+    
+    Returns:
+    None
+    """
+    data = {
+        "f4": [[str(x) for x in f4] for f4 in f4_list]
+    }
+    with open(filename, 'w') as f:
+        json.dump(data, f, indent=4)
+
+# load f4 from a JSON file
+def load_f4(filename):
+    """
+    Function to load the f4 lists from a JSON file.
+    
+    Parameters:
+    filename (str): The name of the file to load the f4 lists.
+    
+    Returns:
+    f4_list (list): The list of f4 arrays.
+    """
+    with open(filename, 'r') as f:
+        data = json.load(f)
+    f4_list = [[Decimal(x) for x in f4] for f4 in data["f4"]]
+    return f4_list
+
 def load_results(filename):
     """
     Function to load the energy eigenvalues and expansions from a JSON file.

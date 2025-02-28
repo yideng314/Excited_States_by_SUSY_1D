@@ -8,7 +8,7 @@ from src.quartic_excited_solver_hpc import *
 if __name__ == "__main__":
     c = Decimal('2')
     E0s = [Decimal('0.53'), Decimal('1.90'), Decimal('3.72'), Decimal('5.82'), Decimal('8.13')]
-    truncations = 20
+    truncations = 100
     precision = 200
     tol = Decimal('1e-100')
     seq_quartic_excited_solver(c, E0s, truncations, precision, tol, max_iter=100, n_excited=5)
